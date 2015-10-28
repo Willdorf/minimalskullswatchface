@@ -1,0 +1,22 @@
+{
+  "uuid": "eb39cb2b-6830-4633-8d48-af7fad3767c8",
+  "shortName": "minimalskulls",
+  "longName": "minimalskulls",
+  "companyName": "MakeAwesomeHappen",
+  "versionLabel": "1.0",
+  "sdkVersion": "3",
+  "targetPlatforms": ["basalt"],
+  "watchapp": {
+    "watchface": true
+  },
+  "capabilities" : [
+	  "configurable"
+  ],
+  "appKeys": {
+	  "backgroundColor" : 0,
+	  "skullColor" : 1
+  },
+  "resources": {
+    "media": []
+  }
+}
