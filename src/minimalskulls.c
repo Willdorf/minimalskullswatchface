@@ -236,6 +236,9 @@ static void inbox_received_handler(DictionaryIterator *iter, void *context) {
 	if (background_color_t) {
 		int bc = background_color_t->value->int32;
 
+		if (bc == 0) { //quick fix so that black colour persists
+			bc++;
+		}
 		persist_write_int(KEY_BACKGROUND_COLOR, bc);
 
 		set_background_and_text_color(bc);
@@ -245,6 +248,9 @@ static void inbox_received_handler(DictionaryIterator *iter, void *context) {
 
 	if (skull_color_t) {
 		int hc = skull_color_t->value->int32;
+		if (hc == 0) { //quick fix so that black colour persists
+			hc++;
+		}
 
 		persist_write_int(KEY_SKULL_COLOR, hc);
 
