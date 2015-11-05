@@ -3,7 +3,7 @@ Pebble.addEventListener('ready', function() {
 });
 
 Pebble.addEventListener('showConfiguration', function() {
-	var url = 'http://f2665c86.ngrok.io';
+	var url = 'http://armstrongwill.com/pebbleconfigurationpages/minimalskulls/index.html';
 
 	console.log('Showing configuration page: ' + url);
 
