@@ -31,8 +31,8 @@ function getAndStoreConfigData() {
 		skullColor : $skullColorPicker.val(),
 	};
 
-	localStorage.backgroundColor = options.backgroundColor;
-	localStorage.skullColor = options.skullColor;
+	localStorage.willdorfminimalskullsbackgroundColor = options.backgroundColor;
+	localStorage.willdorfminimalskullsskullColor = options.skullColor;
 
 	console.log('Got Options: ' + JSON.stringify(options));
 	return options;
@@ -43,8 +43,8 @@ function loadOptions() {
 	var $skullColorPicker = $('#skullColorPicker');
 
 	if (localStorage.backgroundColor) {
-		$backgroundColorPicker[0].value = localStorage.backgroundColor;
-		$skullColorPicker[0].value = localStorage.skullColor;
+		$backgroundColorPicker[0].value = localStorage.willdorfminimalskullsbackgroundColor;
+		$skullColorPicker[0].value = localStorage.willdorfminimalskullsskullColor;
 	}
 }
 
