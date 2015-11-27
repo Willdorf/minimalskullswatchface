@@ -22,6 +22,16 @@ $submitButton.on('click', function() {
 	document.location = return_to + encodeURIComponent(JSON.stringify(getAndStoreConfigData()));
 });
 
+var degreeOption = 0;
+function tabClickHandler(value) {
+	console.log(value);
+	if (value == "Celsius") {
+		degreeOption = 0;
+	} else if (value == "Fahrenheit") {
+		degreeOption = 1;
+	}
+}
+
 function getAndStoreConfigData() {
 	var $backgroundColorPicker = $('#backgroundColorPicker');
 	var $skullColorPicker = $('#skullColorPicker');
@@ -29,10 +39,12 @@ function getAndStoreConfigData() {
 	var options = {
 		backgroundColor : $backgroundColorPicker.val(),
 		skullColor : $skullColorPicker.val(),
+		degreeOption : degreeOption
 	};
 
 	localStorage.willdorfminimalskullsbackgroundColor = options.backgroundColor;
 	localStorage.willdorfminimalskullsskullColor = options.skullColor;
+	localStorage.willdorfminimalskullsdegreeOption = options.degreeOption;
 
 	console.log('Got Options: ' + JSON.stringify(options));
 	return options;
@@ -42,9 +54,19 @@ function loadOptions() {
 	var $backgroundColorPicker = $('#backgroundColorPicker');
 	var $skullColorPicker = $('#skullColorPicker');
 
-	if (localStorage.backgroundColor) {
+	if (localStorage.willdorfminimalskullsbackgroundColor) {
 		$backgroundColorPicker[0].value = localStorage.willdorfminimalskullsbackgroundColor;
 		$skullColorPicker[0].value = localStorage.willdorfminimalskullsskullColor;
+
+		//set the corresponding tab to active
+		degreeOption = localStorage.willdorfminimalheartsdegreeOption;
+		if (degreeOption == 0) {
+			$('#Celsius').attr('class', 'tab-button active');
+		} else {
+			$('#Fahrenheit').attr('class', 'tab-button active');
+		}
+	} else {
+		$('#Celsius').attr('class', 'tab-button active');
 	}
 }
 
