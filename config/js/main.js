@@ -59,7 +59,7 @@ function loadOptions() {
 		$skullColorPicker[0].value = localStorage.willdorfminimalskullsskullColor;
 
 		//set the corresponding tab to active
-		degreeOption = localStorage.willdorfminimalheartsdegreeOption;
+		degreeOption = localStorage.willdorfminimalskullsdegreeOption;
 		if (degreeOption == 0) {
 			$('#Celsius').attr('class', 'tab-button active');
 		} else {
